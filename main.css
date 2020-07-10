@@ -4,18 +4,23 @@
   box-sizing: border-box;
 }
 
+:root {
+  --accent-background: rgb(50, 61, 55);
+  --accent-font-color: rgb(247, 247, 247);
+}
+
 .theme-light {
-  --font-color: rgb(54, 36, 24);
-  --bg-color: rgb(248, 238, 236);
-  --accent-color: rgb(247, 229, 208);
-  --bg-section: rgb(54, 36, 24);
+  --font-color: rgb(31, 43, 36);
+  --bg-color: rgb(247, 247, 247);
+  --accent-color: rgb(243, 237, 237);
+  --bg-section: rgb(50, 61, 55);
 }
 
 .theme-dark {
-  --font-color: rgb(248, 238, 236);
-  --bg-color: rgb(54, 36, 24);
-  --accent-color: rgb(71, 49, 34);
-  --bg-section: rgb(248, 238, 236);
+  --font-color: rgb(247, 247, 247);
+  --bg-color: rgb(31, 43, 36);
+  --accent-color: rgb(50, 61, 55);
+  --bg-section: rgb(243, 237, 237);
 }
 
 body {
@@ -53,12 +58,13 @@ body {
 }
 
 .navbar {
-  height: 50px;
-  padding: 10px 30px;
   position: relative;
   justify-content: space-between;
   display: flex;
   align-items: center;
+  height: 50px;
+  margin: 10px auto;
+  padding: 10px 30px;
 }
 
 .nav-flex {
@@ -143,8 +149,7 @@ body {
 .title-main {
   height: 40px;
   width: 100%;
-  background-color: var(--bg-section);
-  color: var(--bg-color);
+  background-color: var(--accent-background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,6 +167,15 @@ img {
   display: flex;
   padding-bottom: 10px;
   height: 100%;
+  max-height: 400px;
+}
+
+.category-bnt {
+  border: 0px;
+  padding: 0px;
+  outline: none;
+  background-color: transparent;
+  color: var(--accent-font-color);
 }
 
 @media screen and (max-width: 768px) {
