@@ -17,6 +17,21 @@ window.onload = function () {
   })();
 };
 
+window.onclick = function (event) {
+  console.log(event);
+  var navbar = document.getElementsByClassName("navbar")[0];
+  var navMenu = document.getElementsByClassName("nav-menu")[0];
+  var navHeight = navMenu.scrollHeight;
+  if (navbar.classList.contains("toggled")) {
+    navbar.classList.remove("toggled");
+    if (navMenu.style.height == navHeight + "px") {
+      navMenu.style.height = "0px";
+    } else {
+      navMenu.style.height = navHeight + "px";
+    }
+  }
+};
+
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
   localStorage.setItem("theme", themeName);
@@ -35,7 +50,8 @@ function toggleTheme() {
   }
 }
 
-function toggleNavbar() {
+function toggleNavbar(event) {
+  event.stopPropagation();
   var navbar = document.getElementsByClassName("navbar");
   navbar[0].classList.toggle("toggled");
 
