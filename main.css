@@ -194,12 +194,11 @@ img {
   display: flex;
   justify-content: space-between;
   /* max-height: 500px; */
-  padding: 20px 0px;
+  padding: 58px;
 }
 
 .left-about {
-  display: flex;
-  flex: 1;
+ 
 }
 
 .left-about div:nth-child(1) {
@@ -324,6 +323,10 @@ img {
   .about-content {
     padding: 0px 20px 10px;
   }
+
+  .about-section{
+    padding: 39px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -364,5 +367,9 @@ img {
 
   .about-content {
     padding: inherit;
+  }
+
+  .about-title {
+  padding: 10px 20px 0 0;
   }
 }
