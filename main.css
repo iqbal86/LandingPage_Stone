@@ -191,52 +191,60 @@ img {
 /* About section  */
 
 .about-section {
-  display: flex;
-  justify-content: space-between;
-  /* max-height: 500px; */
+  display: grid;
+  grid-template: "left-about about-title" 200px "left-about about-content" 200px "left-about about-content" 200px/1fr 1fr;
   padding: 20px 0px;
 }
 
 .left-about {
   display: flex;
-  flex: 1;
+  grid-area: left-about;
 }
 
 .left-about div:nth-child(1) {
   background-color: var(--accent-background);
-  width: 60px;
-}
-
-.right-about {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
+  min-width: 60px;
 }
 
 .about-title {
+  display: flex;
+  align-items: flex-end;
   padding: 20px 60px 0;
   font-weight: bold;
   font-size: larger;
   color: var(--title-color);
+  grid-area: about-title;
+}
+
+.about-title > div {
+  display: flex;
+  align-items: center;
+}
+
+.square-icon {
+  width: 10px;
+  height: 10px;
+  margin-right: 10px;
+  background-color: var(--accent-background);
 }
 
 .about-content {
   padding: 0px 60px 20px;
   color: var(--font-color);
+  grid-area: about-content;
 }
 
 @media screen and (max-width: 1024px) {
-  .left-about {
-    flex: 3;
+  .main-section {
+    padding: 10px 30px;
   }
 
   .left-about img {
     padding-right: 20px;
   }
 
-  .right-about {
-    flex: 2;
+  .left-about div:nth-child(1) {
+    min-width: 40px;
   }
 
   .about-title {
@@ -245,6 +253,10 @@ img {
 
   .about-content {
     padding: 0px 40px 20px;
+  }
+
+  .about-section {
+    grid-template: "left-about about-title" "left-about about-content"/ 3fr 2fr;
   }
 }
 
@@ -306,11 +318,11 @@ img {
   }
 
   .main-section {
-    padding: 0px 30px 30px;
+    padding: 0px 20px 20px;
   }
 
   .left-about div:nth-child(1) {
-    width: 40px;
+    min-width: 30px;
   }
 
   .left-about img {
@@ -318,11 +330,15 @@ img {
   }
 
   .about-title {
-    padding: 10px 20px 0;
+    padding: 10px 30px 0;
   }
 
   .about-content {
-    padding: 0px 20px 10px;
+    padding: 0px 30px 10px;
+  }
+
+  .about-section {
+    grid-template: "left-about about-title" "left-about about-content"/ 3fr 2fr;
   }
 }
 
@@ -342,12 +358,8 @@ img {
   }
 
   .about-section {
-    flex-direction: column;
-    padding: 25px;
-  }
-
-  .left-about {
-    flex: 1;
+    grid-template: "about-title" "left-about" "about-content";
+    padding: 15px 25px;
   }
 
   .left-about img {
@@ -358,11 +370,12 @@ img {
     display: none;
   }
 
-  .right-about {
-    flex: 1;
+  .about-title {
+    font-size: large;
+    padding: 0px;
   }
 
   .about-content {
-    padding: inherit;
+    padding: 0px;
   }
 }
